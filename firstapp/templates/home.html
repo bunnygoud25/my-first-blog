@@ -1,0 +1,33 @@
+{% extends 'bunny.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <form class="form-inline" action="" method="POST">
+        {% csrf_token %}
+        <label class="sr-only" for="inlineFormInputName2">First Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="First Name" name='fname'>
+        <label class="sr-only" for="inlineFormInputName2">Last Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Last Name" name='lname'>
+
+        <button type="submit" class="btn btn-secondary mb-2">Tell me a chuck joke </button>
+      </form>
+
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Chuck Norris</h5>
+          <p class="card-text">{{joke}}</p>
+          <a href="{% url 'portfolio' %}" class="card-link">check out my portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
